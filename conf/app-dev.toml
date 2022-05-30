@@ -1,0 +1,94 @@
+[app]
+name = "td_amazon"
+version = "1.0.0"
+campaign_thread_size = 2000
+ad_size = 10
+insert_size = 50
+topic_size = 10
+debug = 1
+[log]
+path = "log/"
+debug = 1
+format = "text"
+[whitelist]
+profileId = 2479982058045265
+[sync]
+debug = 1
+sync_path = "./"
+dumper_path = "./"
+zip_path = "./"
+update_size = 10
+update_type = "*"
+update_table = "*"
+batch_size = 100
+resourceId = 0
+op = "push"
+waiting_time = 0
+timeout = 10
+is_changelog=1
+[history]
+history_thread_size = 1000
+is_async = 1
+insert_size = 200
+waiting_size = 10
+waiting_time = 60
+[db]
+host = "127.0.0.1"
+port = 3306
+database = "td_xplatform"
+user = "root"
+password = "yf971130"
+[cache]
+host = "127.0.0.1"
+port = 6379
+database = 0
+
+[redis]
+host = "101.34.126.123"
+port = 58110
+password = "qaz123!@#"
+database = 0
+
+[kafka]
+type = "kafka"
+broker = "172.17.16.3:9092"
+sasl_enable = 1
+max_open_requests = 5000
+
+[task]
+report_url = "root:123456@tcp(127.0.0.1:3306)/report_task?charset=utf8mb4&parseTime=True&loc=Local"
+request_url = "root:123456@tcp(127.0.0.1:3306)/report_task?charset=utf8mb4&parseTime=True&loc=Local"
+
+[google]
+path = "/Users/chonglin/td_amazon"
+devToken = "kT3Yl80n6o73KNWCN600jA"
+loginCustomerID = 1058528835
+clientId = "1036285810534-29sogfbknbc10g1mpbns6j4tml9dnc4n.apps.googleusercontent.com"
+clientSecret = "0iVmMDdMuIxlYxm63giDhWEp"
+refreshToken = "1//06MPIYgM2g6C5CgYIARAAGAYSNgF-L9IrnkXJ9bx4egLU37Jq6XMbxMTrIqGTfWICQz24PLn-ZMjZ6sKNQH-CZkSM01RDG3olDw"
+[facebook]
+path = "/Users/chonglin/td_amazon/facebook"
+clientId = 307378967729498
+clientSecret = "8e8bda6671518ba066dbe9f674ec051d"
+refreshToken = "EAAEXjz4u1VoBAEm2JA7Bbssz5q5FJdUnBwGbhbtbUXEPObXMkEg19jT1CLlbIxFfwvlcZC47Bij1z84dCXmNpSSi1RS8NdzkuVyAWYZCcRhoKPF2E5v3J6pT2ym5Elh9B0CK9Fwi9sKRilYNI71IdZAlTlemQ66lMpXf8xcW892Hx7Vavbmn4VH9ItXYxPyK06qPZC3kO0QpZBye2QiZBh"
+[rpc]
+network = "tcp"
+address = "0.0.0.0:8105"
+#host = "10.200.0.10"
+host = "127.0.0.1"
+port = 8105
+timeout = 1800
+[grpc]
+port = ":58105"
+[http]
+port = ":9075"
+[nats]
+url = "nats://49.234.114.84:4242"
+[clickhouse-report]
+dsn = "tcp://101.34.218.154:58105?database=xplatform_logs&username=default&password=yOfxTPPztc8OH7Zmxy&read_timeout=10&write_timeout=20"
+[clickhouse-read]
+dsn = "tcp://101.34.218.154:58105?database=xplatform_logs&username=default&password=yOfxTPPztc8OH7Zmxy&read_timeout=10&write_timeout=20"
+[clickhouse-write]
+dsn = "tcp://101.34.218.154:58105?database=xplatform_logs_local&username=default&password=yOfxTPPztc8OH7Zmxy&read_timeout=10&write_timeout=20"
+[db-type]
+value = "mysql"
