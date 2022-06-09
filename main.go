@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-
+	fmt.Println("test")
+	Greedy()
 }
 
 //斐波拉契数列
@@ -75,5 +76,33 @@ func yanghui(x int) [][]int {
 	return ans
 }
 
+//只有25，10，5，1四种面额的硬币，用最少的币数量来凑成目标数额
+func Greedy() {
+	var coin25Num, coin10Num, coin5Num, coin1Num = 0, 0, 0, 0
+	var sum_money = 41
+
+	for sum_money >= 25 {
+		sum_money -= 25
+		coin25Num++
+	}
+
+	for sum_money >= 10 {
+		sum_money -= 10
+		coin10Num++
+	}
+
+	for sum_money >= 5 {
+		sum_money -= 5
+		coin5Num++
+	}
+
+	for sum_money >= 1 {
+		sum_money -= 1
+		coin1Num++
+	}
+
+	fmt.Printf("coin 25:%d, coin 10:%d, coin 5:%d, coin 1:%d", coin25Num, coin10Num, coin5Num, coin1Num)
+	return
+}
 
 
