@@ -4,7 +4,7 @@ import "fmt"
 
 func main()  {
 	var x = []int{3,44,38,5,47,15,36,26,27,44,46,38,19,2}
-	testSlice(x)
+	x = testSlice(x)
 	fmt.Println(x)
 }
 
@@ -85,6 +85,7 @@ func quickSort(nums []int, start int, end int)  {
 	quickSort(nums, i+1, end)
 }
 
-func testSlice(x []int)  {
+func testSlice(x []int) []int {
 	x = append(x, 100)
+	return x
 }

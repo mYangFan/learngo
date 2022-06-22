@@ -10,9 +10,13 @@ import (
 	"gonb/pkg/log"
 	"io/ioutil"
 	"net/http"
+	"time"
 )
 
+
+var ratelimiter = time.Tick(100 * time.Millisecond)
 func Fetch(url string) ([]byte, error) {
+	<-ratelimiter
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil,err
